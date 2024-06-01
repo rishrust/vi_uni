@@ -31,10 +31,14 @@ Instead of updating over ssh, i am using youtube api to sync music
 - Create youtube api secrete keys and rename to client_secret.json
 https://youtu.be/QY8dhl1EQfI?si=MdlroaY6Jb0x-5Uy
 - Watch above video if you don't know how to create api secret..
+- update PLAYLIST_ID in code with your youtube playlist id
 - Run the script as root user in termux
 - run vi_ytub to sync vimusic and innertune_ytub to sync innertune music
 
 ## [Python Dependencies]
 pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
+
+## TASKS
+- Trying to merge it with original apks
 

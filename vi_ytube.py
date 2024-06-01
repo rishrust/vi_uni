@@ -3,7 +3,8 @@ import os
 import sync
 from sync import to_youtube,get_songs_from_youtube_playlist
 from time import sleep
-PLAYLIST_ID="PLga65AAwFBxh8oWz0P0cq8XafewLx6Qga"
+#your youtube playlist id
+PLAYLIST_ID=""
 
 #changing permission of vimusic folder
 print("changing permission of vimusic folder")
