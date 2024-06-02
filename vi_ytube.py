@@ -1,10 +1,9 @@
 import sqlite3
 import os
 import sync
-from sync import to_youtube,get_songs_from_youtube_playlist
+from sync import to_youtube,get_songs_from_youtube_playlist,get_youtube_playlist_songs
 from time import sleep
-#your youtube playlist id
-PLAYLIST_ID=""
+PLAYLIST_ID="PLga65AAwFBxh8oWz0P0cq8XafewLx6Qga"
 
 #changing permission of vimusic folder
 print("changing permission of vimusic folder")
@@ -60,11 +59,12 @@ def get_liked_music(db_file):
 
 
 #sync liked music with youtube
-def vi_liked_to_youtube(liked):
-    for i in liked:
-        to_youtube(i,PLAYLIST_ID)
-        sleep(0.1)
-# vi_liked_to_youtube(get_liked_music(db_file))
+def vi_liked_to_youtube(local_liked):
+    ytube_liked=get_youtube_playlist_songs(PLAYLIST_ID)
+    for i in local_liked:
+        if i not in ytube_liked:
+            to_youtube(i,PLAYLIST_ID)
+            sleep(0.1)
 
 
 
@@ -116,8 +116,7 @@ def youtube_to_vi(PLAYLIST_ID):
 
 
 
-
-
+vi_liked_to_youtube(get_liked_music(db_file))
 youtube_to_vi(PLAYLIST_ID)
 
 

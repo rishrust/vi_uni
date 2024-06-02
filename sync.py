@@ -47,6 +47,27 @@ def check_if_video_in_playlist(youtube, playlist_id, video_id):
             return True
     return False
 
+
+
+def get_youtube_playlist_songs( playlist_id):
+    youtube = get_authenticated_service()
+     # Fetch the playlist items
+    request = youtube.playlistItems().list(
+        part="snippet",
+        playlistId=playlist_id,
+        maxResults=50  # Adjust as needed
+    )
+    response = request.execute()
+    songs=[]
+    # Check if the video ID is in the playlist
+    for item in response['items']:
+        songs.append(item['snippet']['resourceId']['videoId'])
+
+    return songs
+
+
+
+
 def add_song_to_playlist(youtube, playlist_id, video_id):
     if check_if_video_in_playlist(youtube, playlist_id, video_id):
         print(f"Video {video_id} is already in the playlist.")
