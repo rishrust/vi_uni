@@ -34,7 +34,7 @@ https://youtu.be/QY8dhl1EQfI?si=MdlroaY6Jb0x-5Uy
 - update PLAYLIST_ID in code with your youtube playlist id
 - Run the script as root user in termux
 - run vi_ytub to sync vimusic and innertune_ytub to sync innertune music
-
+- Currently for easy of access you can this script as termux shortcut in termux widget
 ## [Python Dependencies]
 pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
